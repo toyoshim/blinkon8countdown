@@ -1,0 +1,44 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<body bgcolor="#000" style="margin: 0;">
+<script src="tmalib/tma.js"></script>
+<script>
+/* global navigator */
+/* global tma */
+/* global MajVj */
+/* global TmaTimeline */
+
+
+function resizeServer (width, height) {
+  window.resizeTo(width, height);
+  setTimeout(e => {
+    window.resizeTo(
+        width * 2 - window.innerWidth, height * 2 - window.innerHeight);
+  }, 100);
+  if (mv) {
+    mv.resize(width, height);
+    if (host)
+      host.onresize(width / height);
+  }
+}
+
+var mv = null;
+var host = null;
+
+tma.extlibs = [ '../gl-matrix/dist/gl-matrix.js', 'ext/mv/MajVj.js' ];
+tma.onload = function () {
+  Promise.all([MajVj.loadAllPlugins()]).then(() => {
+    tma.fetch('set.json', 'json', true).then(data => {
+      mv = new MajVj();
+      host = mv.create('misc', 'host', data.sets[0]);
+      window.addEventListener('resize', () => { mv.onresize(); host.onresize(mv.aspect()); }, false);
+      mv.run(function (delta) {
+        host.properties.controls[39] = 1 - (host.properties.controls[39] || 0);
+        host.draw(delta);
+      });
+    });
+  });
+};
+</script>
+</body>
+</html>

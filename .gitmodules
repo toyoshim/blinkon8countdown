@@ -1,0 +1,6 @@
+[submodule "tmalib"]
+	path = tmalib
+	url = https://github.com/toyoshim/tmalib.git
+[submodule "gl-matrix"]
+	path = gl-matrix
+	url = https://github.com/toji/gl-matrix.git

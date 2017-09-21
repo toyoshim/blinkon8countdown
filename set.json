@@ -1,0 +1,26 @@
+{
+  "_comment": "",
+  "type": "majvj-scene-sets",
+  "sets" : [
+    {
+      "title": "BlinkON8 opening countdown",
+      "comments": [
+        "フェーダー配置:",
+        " N/A (＊) | N/A (＊) | N/A (＊)",
+        " N/A (＊) | N/A (＊) | Sound Volume (127)",
+        "ボタン配置:",
+        " S: N/A | N/A | Start",
+        " M: N/A | N/A | N/A",
+        " R: N/A | N/A | N/A"
+      ],
+      "type": "external",
+      "name": "countdown",
+      "path": "scenes/countdown.js",
+      "map": {
+        "7": { "name": "soundGain", "offset": 0, "scale": 0.007874015748031496, "type": "fader" },
+        "32": { "name": "test1", "offset": 0, "scale": 1.0, "type": "button" },
+        "39": { "name": "start", "offset": 0, "scale": 1.0, "type": "button" }
+      }
+    }
+  ]
+}

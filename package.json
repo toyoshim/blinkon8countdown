@@ -1,0 +1,20 @@
+{
+  "name": "b8op",
+  "version": "0.0.0",
+  "description": "Blink8 opening demo",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"OK: no test\" && exit 0"
+  },
+  "author": "toyoshim@gmail.com",
+  "license": "New BSD",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.8.5",
+    "logfmt": "^1.1.2",
+    "momolog": "0.1.1"
+  },
+  "engines": {
+    "node": "4.2.1"
+  }
+}
